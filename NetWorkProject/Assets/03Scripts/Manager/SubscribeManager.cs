@@ -6,7 +6,12 @@ public enum SubscribeType
 {
     None,
     LoginEnter,    // 데이터 없는 로그인 엔터
-    UpdateStatus   // 예시: string 데이터를 같이 보낼 때
+    OnLoading,//로딩 시작
+    OnLoadingComplete,//로딩 끝
+
+    //==================
+    EmailVerificationRequired,//활성화 이메일 인증 하라는 창
+    //==================
 }
 
 public class SubscribeManager : MonoBehaviour

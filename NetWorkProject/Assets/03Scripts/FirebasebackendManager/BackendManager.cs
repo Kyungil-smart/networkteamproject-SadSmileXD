@@ -52,6 +52,7 @@ public class BackendManager : MonoBehaviour
                 database = FirebaseDatabase.DefaultInstance;
                 // Set a flag here to indicate whether Firebase is ready to use by your app.
                 Debug.Log("Firebase dependencies check success");
+                SubscribeManager.instance.Publish(SubscribeType.OnLoadingComplete);
             }
             else
             {
