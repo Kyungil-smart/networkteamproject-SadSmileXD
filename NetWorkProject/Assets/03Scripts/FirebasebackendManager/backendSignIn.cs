@@ -3,6 +3,7 @@ using Firebase.Extensions;
 using UnityEngine;
 public class backendSignIn  
 {
+    public backendSendEmail m_sendEmail;
     public void SignIn(string email, string password)
     {
         BackendManager.Auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
@@ -21,7 +22,9 @@ public class backendSignIn
             {
                 Debug.Log("이메일 인증 안됨");
                 SubscribeManager.instance.Publish(SubscribeType.EmailVerificationRequired);
+                m_sendEmail.SendEmail();
                 BackendManager.Auth.SignOut();
+
             }
             else
             {

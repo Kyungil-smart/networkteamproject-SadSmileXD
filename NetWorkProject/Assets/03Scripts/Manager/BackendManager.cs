@@ -25,11 +25,14 @@ public class BackendManager : MonoBehaviour
     ///////////////  
     private backendSignUp m_signup;
     private backendSignIn m_Signin;
+    private backendSendEmail m_sendEmail;
     ///////////////  
     private void Awake()
     {
         m_signup = new();
         m_Signin = new();
+        m_sendEmail = new();
+        m_Signin.m_sendEmail = m_sendEmail;
         if (Instance == null)
         {
             Instance = this;
