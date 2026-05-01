@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Register_EmailWindow
   m_EditorClassIdentifier: Assembly-CSharp::Register_disable
   enumType: 4
+  description: 
+  flag: 1

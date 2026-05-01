@@ -1,6 +1,7 @@
 using Firebase.Auth;
 using Firebase.Extensions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class backendSignIn  
 {
     public backendSendEmail m_sendEmail;
@@ -29,6 +30,8 @@ public class backendSignIn
             else
             {
                 Debug.Log("이메일 인증됨");
+                SubscribeManager.instance.Publish(SubscribeType.DeleteBtnActive);
+                SceneManager.LoadScene("Test_ServerJoin");
             }
             AuthResult result = task.Result;
             Debug.Log($"User signed in successfully: {result.User.DisplayName} ({result.User.UserId})");

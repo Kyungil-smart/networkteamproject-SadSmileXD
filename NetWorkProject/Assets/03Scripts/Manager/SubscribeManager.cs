@@ -11,6 +11,7 @@ public enum SubscribeType
 
     //==================
     EmailVerificationRequired,//활성화 이메일 인증 하라는 창
+    DeleteBtnActive, //계정 삭제
     //==================
 }
 

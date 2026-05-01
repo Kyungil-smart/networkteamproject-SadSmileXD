@@ -1,9 +1,12 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Register", menuName = "Scriptable Objects/Register/disable")]
-public class Register_disable : Register
+public class Register_Active : Register
 {
     private GameObject transparencyObj;
-    public override void Init(MonoBehaviour owner, Object[] objs)
+    [SerializeField]private bool flag;
+    public override void Init(MonoBehaviour owner, UnityEngine.Object[] objs)
     {
         transparencyObj = null;
         foreach(var obj in objs)
@@ -17,6 +20,6 @@ public class Register_disable : Register
     public override void subscribe()
     {
         if(transparencyObj!=null)
-            transparencyObj.SetActive(true);
+            transparencyObj.SetActive(flag);
     }
 }

@@ -15,7 +15,9 @@ public class LoginEnter : MonoBehaviour
             item.onSubmit.AddListener((string _)=>
             {
                 SubscribeManager.instance.Publish(SubscribeType.LoginEnter);
+                
             });
+           
         }
        
     }
