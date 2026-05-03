@@ -19,7 +19,7 @@ public class backendSignUp : MonoBehaviour
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error: " + task.Exception);
                 return;
             }
-
+            
             // Firebase user has been created.
             AuthResult result = task.Result;
             Debug.Log($"Firebase user created successfully: {result.User.DisplayName} ({result.User.UserId})");

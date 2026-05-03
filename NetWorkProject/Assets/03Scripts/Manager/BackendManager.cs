@@ -25,11 +25,14 @@ public class BackendManager : MonoBehaviour
     ///////////////  
     private backendSignUp m_signup;
     private backendSignIn m_Signin;
+    private backendSendEmail m_sendEmail;
     ///////////////  
     private void Awake()
     {
         m_signup = new();
         m_Signin = new();
+        m_sendEmail = new();
+        m_Signin.m_sendEmail = m_sendEmail;
         if (Instance == null)
         {
             Instance = this;
@@ -52,6 +55,7 @@ public class BackendManager : MonoBehaviour
                 database = FirebaseDatabase.DefaultInstance;
                 // Set a flag here to indicate whether Firebase is ready to use by your app.
                 Debug.Log("Firebase dependencies check success");
+                SubscribeManager.instance.Publish(SubscribeType.OnLoadingComplete);
             }
             else
             {

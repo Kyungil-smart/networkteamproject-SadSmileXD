@@ -19,7 +19,6 @@ public class activateGameObject: ButtonBase
                 if(obj.TryGetComponent<IDisable>(out var disableComponent))
                 {
                     m_disable= disableComponent;
-                   
 
                 }
                 else
