@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class LobbyManager : MonoBehaviour
 {
     public static LobbyManager Instance { get; private set; }
-
+    public string SceneName;
+    public string JoinCode;
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
-        InitializeHostLobby();
+       InitializeHostLobby();
+ 
     }
 
     // ✅ Host 시작 후 호출
@@ -23,14 +25,15 @@ public class LobbyManager : MonoBehaviour
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
     }
-
+    
     [ContextMenu("dsds")]// 🔥 Host 시작 완료 시 실행]
     private void OnServerStarted()
     {
         Debug.Log("[Lobby] 서버 시작 → 로비 씬 로드");
-
-        NetworkManager.Singleton.SceneManager.LoadScene("TestLoad", LoadSceneMode.Additive);
-
+        GameObject[] rootObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+       
+        NetworkManager.Singleton.SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
+       
     }
 
     // ✅ 유저 접속

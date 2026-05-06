@@ -15,7 +15,7 @@ public class NetworkBootstrap : MonoBehaviour
     [SerializeField] private Button _copyButton;
 
     private bool _isCallbacksBound;
-
+  
     private void OnEnable()
     {
         BindNetworkCallbacks();
@@ -75,8 +75,10 @@ public class NetworkBootstrap : MonoBehaviour
         try
         {
             string joinCode = await RelayNetworkService.Instance.StartHostWithRelayAsync();
-            //_joinCodeInputField.text = joinCode;
-            LobbyManager.Instance.InitializeHostLobby();
+            _joinCodeInputField.text = joinCode;
+            LobbyManager.Instance.JoinCode = joinCode;
+
+
         }
         catch (Exception e)
         {
