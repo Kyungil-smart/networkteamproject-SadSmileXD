@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
 using Unity.Netcode;
@@ -8,6 +9,14 @@ public class ChatSendServer : NetworkBehaviour
 {
     [SerializeField] private GameObject m_gameObject;
     [SerializeField] private GameObject m_chatObject;
+    private Queue<GameObject> m_MessageQueue;
+    private void Awake()
+    {
+        m_MessageQueue = new Queue<GameObject>(20);
+
+
+
+    }
     private void OnEnable()
     {
         SubscribeManager.instance.Subscribe<string>(SubscribeType.SendMessage,SendMessageRpc);
@@ -32,7 +41,18 @@ public class ChatSendServer : NetworkBehaviour
         chatobject.TryGetComponent<TextMeshProUGUI>(out TextMeshProUGUI chatText);
         chatText.text= message.ToString();
         chatText.transform.SetParent(m_gameObject.transform);
+        Push(chatobject);
 
+    }
 
+    private void Push(GameObject obj)
+    {
+        int MAX_MSG = 20;
+        if (m_MessageQueue.Count>= MAX_MSG)
+        {
+            var MSG =    m_MessageQueue.Dequeue();
+            Destroy(MSG);
+        }
+        m_MessageQueue.Enqueue(obj);
     }
 }
