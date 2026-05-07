@@ -9,19 +9,21 @@ public class HexMapGenerator : MonoBehaviour
 
     public float hexSize = 1f;
     private Color m_color;
-
+    MaterialPropertyBlock mpb;
     void Start()
     {
-        m_color= new Color(
-    Random.value,
-    Random.value,
-    Random.value
-);
+          mpb = new MaterialPropertyBlock();
+        
         Generate();
     }
-
+  
     void Generate()
     {
+        Color randomColor = new Color(
+                  Random.value,
+                  Random.value,
+                  Random.value
+              );
         float xOffset = hexSize * 1.5f;
         float zOffset = Mathf.Sqrt(3f) * hexSize;
 
@@ -36,10 +38,13 @@ public class HexMapGenerator : MonoBehaviour
                     posZ += zOffset / 2f;
 
                 Vector3 pos = new Vector3(posX, this.transform.position.y, posZ);
-
+                mpb.Clear();
+                mpb.SetColor("_BaseColor", randomColor);
                 var prefab=Instantiate(hexPrefab, pos, Quaternion.Euler(-90, 0, 0));
-                prefab.GetComponentInChildren<MeshRenderer>().material.color= m_color;
-                prefab.transform.SetParent(transform);
+                var renderer =
+                    prefab.GetComponentInChildren<MeshRenderer>();
+                renderer.SetPropertyBlock(mpb);
+                //prefab.transform.SetParent(transform);
             }
         }
     }
