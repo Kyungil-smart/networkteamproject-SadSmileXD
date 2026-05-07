@@ -14,6 +14,8 @@ public enum SubscribeType
     DeleteBtnActive, //계정 삭제
     //==================
     SendMessage,
+    //=============
+    AddUserName,
 
 }
 

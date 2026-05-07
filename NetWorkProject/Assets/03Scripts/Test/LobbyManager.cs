@@ -26,7 +26,7 @@ public class LobbyManager : MonoBehaviour
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
     }
     
-    [ContextMenu("dsds")]// 🔥 Host 시작 완료 시 실행]
+    [ContextMenu("dsds")]//   Host 시작 완료 시 실행]
     private void OnServerStarted()
     {
         Debug.Log("[Lobby] 서버 시작 → 로비 씬 로드");
@@ -36,7 +36,7 @@ public class LobbyManager : MonoBehaviour
        
     }
 
-    // ✅ 유저 접속
+    //   유저 접속
     private void OnClientConnected(ulong clientId)
     {
         Debug.Log($"[Lobby] 유저 접속: {clientId}");
@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviour
         Debug.Log($"현재 인원: {NetworkManager.Singleton.ConnectedClientsList.Count}");
     }
 
-    // ✅ 유저 퇴장
+    //   유저 퇴장
     private void OnClientDisconnected(ulong clientId)
     {
         Debug.Log($"[Lobby] 유저 퇴장: {clientId}");
