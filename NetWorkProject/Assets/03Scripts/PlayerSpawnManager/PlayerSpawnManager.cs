@@ -26,5 +26,6 @@ public class PlayerSpawnManager : NetworkBehaviour
             Debug.Log($"[Spawn] Player {clientId} → {sp.position}");
             index++;
         }
+        this.gameObject.GetComponent<NetworkObject>().Despawn();
     }
 }

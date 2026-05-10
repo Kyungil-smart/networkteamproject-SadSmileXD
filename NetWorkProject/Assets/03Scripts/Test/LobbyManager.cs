@@ -8,6 +8,7 @@ public class LobbyManager : MonoBehaviour
     public static LobbyManager Instance { get; private set; }
     public string SceneName;
     public string JoinCode;
+ 
     private void Awake()
     {
         if (Instance == null)

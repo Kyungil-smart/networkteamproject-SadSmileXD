@@ -1,6 +1,8 @@
+
+using Unity.Netcode;
 using UnityEngine;
 
-public class HexMapGenerator : MonoBehaviour
+public class HexMapGenerator : NetworkBehaviour
 {
     public GameObject hexPrefab;
 
@@ -8,22 +10,21 @@ public class HexMapGenerator : MonoBehaviour
     public int height = 10;
 
     public float hexSize = 1f;
-    private Color m_color;
+    private NetworkVariable< Color > m_color = new NetworkVariable<Color>();
     MaterialPropertyBlock mpb;
-    void Start()
+    public override void OnNetworkSpawn()
     {
-          mpb = new MaterialPropertyBlock();
-        
+        if(IsServer)
+        {
+            m_color.Value = new Color(Random.value, Random.value, Random.value);
+        }
+        mpb = new MaterialPropertyBlock();
+       
         Generate();
     }
-  
     void Generate()
     {
-        Color randomColor = new Color(
-                  Random.value,
-                  Random.value,
-                  Random.value
-              );
+      
         float xOffset = hexSize * 1.5f;
         float zOffset = Mathf.Sqrt(3f) * hexSize;
 
@@ -39,13 +40,14 @@ public class HexMapGenerator : MonoBehaviour
 
                 Vector3 pos = new Vector3(posX, this.transform.position.y, posZ);
                 mpb.Clear();
-                mpb.SetColor("_BaseColor", randomColor);
-                var prefab=Instantiate(hexPrefab, pos, Quaternion.Euler(-90, 0, 0));
+                mpb.SetColor("_BaseColor", m_color.Value);
+                var prefab = Instantiate(hexPrefab, pos, Quaternion.Euler(-90, 0, 0));
                 var renderer =
                     prefab.GetComponentInChildren<MeshRenderer>();
                 renderer.SetPropertyBlock(mpb);
-                //prefab.transform.SetParent(transform);
+                
             }
         }
+        this.gameObject.GetComponent<NetworkObject>().Despawn();
     }
 }

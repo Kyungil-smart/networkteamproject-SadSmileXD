@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,7 @@ public class PlayerRun : PlayerBase
             }
         }
     }
+ 
     public override void Execute(InputAction.CallbackContext context)
     {
        
@@ -35,13 +37,13 @@ public class PlayerRun : PlayerBase
         // 2. 3D 이동에 맞게 X, Z축으로 변환하여 저장
         moveDir = new Vector3(input.x, 0, input.y).normalized;
     }
-    public void FixedUpdate()
-    {
-        if (m_jump.isJumping) return;
-        Vector3 targetVelocity = moveDir * moveSpeed;
-        targetVelocity.y = m_rigid.linearVelocity.y; // 중력 유지
-        m_rigid.linearVelocity = targetVelocity;
-    }
+    //public void FixedUpdate()
+    //{
+    //    if (m_jump.isJumping) return;
+    //    Vector3 targetVelocity = moveDir * moveSpeed;
+    //    targetVelocity.y = m_rigid.linearVelocity.y; // 중력 유지
+    //    m_rigid.linearVelocity = targetVelocity;
+    //}
     
 
 }

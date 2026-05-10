@@ -22,10 +22,10 @@ public class PlayerJump : PlayerBase
     public override void Execute(InputAction.CallbackContext context)
     {
          if(context.started)
-        {
+         {
             m_rigid.AddForce(Vector3.up* JumpForce, ForceMode.Impulse);
             isJumping = true;
-        }
+         }
     }
     private void OnTriggerEnter(Collider other)
     {
