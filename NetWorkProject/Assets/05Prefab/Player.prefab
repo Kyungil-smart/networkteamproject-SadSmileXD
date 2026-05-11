@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7527574224809107035}
   - component: {fileID: 2235262194876196677}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,9 +50,13 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   m_rigid: {fileID: 8945655547710025197}
   m_Camera: {fileID: 3273168444683748264}
-  moveSpeed: 5
-  jumpForce: 5
+  m_PlayerData:
+  - {fileID: 9052550187584422990}
+  - {fileID: 7527574224809107035}
+  m_Run: {fileID: 9052550187584422990}
+  m_Jump: {fileID: 7527574224809107035}
   maxFallSpeed: -9.81
+  airControlMultiplier: 0.7
 --- !u!114 &9052550187584422990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2083a2e292c05045afc96b03b85b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRun
+  ShowTopMostFoldoutHeaderGroup: 1
   m_jump: {fileID: 7527574224809107035}
+  moveSpeed: 3.5
+  currentInput: {x: 0, y: 0}
 --- !u!114 &7527574224809107035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d21fd1c4f588040aaa39d681264ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
+  ShowTopMostFoldoutHeaderGroup: 1
   JumpForce: 5
   isJumping: 0
 --- !u!65 &2235262194876196677
@@ -128,13 +136,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3273168444683748264}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22120033, y: -0, z: -0, w: 0.9752284}
-  m_LocalPosition: {x: 0, y: 0.8, z: -1.7}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0.07, y: 4.07, z: -3.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3770964502936795190}
-  m_LocalEulerAnglesHint: {x: 25.559, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!20 &4730210009583695534
 Camera:
   m_ObjectHideFlags: 0
@@ -254,6 +262,7 @@ GameObject:
   - component: {fileID: 5985596589726136402}
   - component: {fileID: 1875259855274387727}
   - component: {fileID: 8282817073631320684}
+  - component: {fileID: 3133176979519247732}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -274,8 +283,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2246002231013860962}
   - {fileID: 2496738500192963314}
+  - {fileID: 2246002231013860962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -2.22, z: 0}
 --- !u!33 &6746783081156382685
@@ -369,7 +378,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4651928017037802116}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a4ad3769b08ce61499860c78c4a62771, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -395,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2911525239
+  GlobalObjectIdHash: 1674526456
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -471,3 +480,16 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &3133176979519247732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651928017037802116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279cbd4578ad1af4fa43353261ee33de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  mouseSensitivity: 100

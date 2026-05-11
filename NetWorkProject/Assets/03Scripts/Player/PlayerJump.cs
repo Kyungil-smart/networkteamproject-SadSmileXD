@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,7 @@ public class PlayerJump : PlayerBase
     [SerializeField] private float JumpForce;
     private Rigidbody m_rigid;
     public bool isJumping;
-    public override void init(MonoBehaviour Owner, params object[] objects)
+    public override void init(NetworkBehaviour Owner, params object[] objects)
     {
         isJumping = false;
          foreach (object obj in objects)
@@ -23,6 +24,7 @@ public class PlayerJump : PlayerBase
     {
          if(context.started)
          {
+            if (isJumping) return;
             m_rigid.AddForce(Vector3.up* JumpForce, ForceMode.Impulse);
             isJumping = true;
          }
