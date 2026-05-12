@@ -8,7 +8,8 @@ public class DeadZone : NetworkBehaviour
         if(other.CompareTag("Player"))
         {
             if (!IsOwner) return;
-            other.gameObject.GetComponent<NetworkObject>().Despawn();
+            other.gameObject.TryGetComponent<NetworkObject>(out var networkObject);
+            networkObject?.Despawn();
             // 플레이어가 사망 구역에 들어왔을 때 처리할 로직
             Debug.Log("Player entered the Dead Zone!");
                 

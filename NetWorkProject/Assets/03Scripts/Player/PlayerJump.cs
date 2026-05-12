@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ public class PlayerJump : PlayerBase
     [SerializeField] private float JumpForce;
     private Rigidbody m_rigid;
     public bool isJumping;
+    public NetworkAnimator m_animator;
     public override void init(NetworkBehaviour Owner, params object[] objects)
     {
         isJumping = false;
@@ -27,6 +29,7 @@ public class PlayerJump : PlayerBase
             if (isJumping) return;
             m_rigid.AddForce(Vector3.up* JumpForce, ForceMode.Impulse);
             isJumping = true;
+            m_animator.SetTrigger("OnJump");
          }
     }
     private void OnTriggerEnter(Collider other)

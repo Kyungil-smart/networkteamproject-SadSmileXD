@@ -1,0 +1,795 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.9f1 (7a9955a4f2fa) revision 8034645'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-l_l07" at "2026-05-11T04:00:57.5802766Z"
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'ko' Physical Memory: 65315 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-11T04:00:57Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Unity/networkteamproject-SadSmileXD/NetWorkProject
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+51152
+-licensingIpc
+LicenseClient-l_l07
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Unity/networkteamproject-SadSmileXD/NetWorkProject
+C:/Unity/networkteamproject-SadSmileXD/NetWorkProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [26344]  Target information:
+
+Player connection [26344]  * "[IP] 192.168.200.194 [Port] 0 [Flags] 2 [Guid] 2715534586 [EditorId] 2715534586 [Version] 1048832 [Id] WindowsEditor(7,SadSmile) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [26344] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [26344] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 21.88 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.9f1 (7a9955a4f2fa)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Unity/networkteamproject-SadSmileXD/NetWorkProject/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25a2)
+    Vendor:   NVIDIA
+    VRAM:     3962 MB
+    Driver:   32.0.15.9579
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56944
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              85207d844f7b4f96837eb82676e4f8f1
+  Correlation Id:          95dfa63ff3e027ef434b2b2a97c0d0a5
+  External correlation Id: 5347438100732891721
+  Machine Id:              Ti74YY6JpR7d4NBAACX7cTUSoJw=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-l_l07" (connect: 0.00s, validation: 0.00s, handshake: 1.39s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-l_l07-notifications" at "2026-05-11T04:00:58.9752847Z"
+[Licensing::Module] Licensing Background thread has ended after 1.40s
+[Licensing::Module] Licensing is initialized (took 0.23s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14568925754099-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.233566 seconds.
+- Loaded All Assemblies, in  0.884 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 370 ms
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.082 seconds
+Domain Reload Profiling: 1963ms
+	BeginReloadAssembly (189ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (299ms)
+	LoadAllAssembliesAndSetupDomain (318ms)
+		LoadAssemblies (187ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (310ms)
+			TypeCache.Refresh (306ms)
+				TypeCache.ScanAssembly (287ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1083ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1024ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (494ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (143ms)
+			ProcessInitializeOnLoadAttributes (265ms)
+			ProcessInitializeOnLoadMethodAttributes (116ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.422 seconds
+Refreshing native plugins compatible for Editor in 6.59 ms, found 7 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 7.79 ms, found 7 plugins.
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.705 seconds
+Domain Reload Profiling: 3119ms
+	BeginReloadAssembly (243ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (1018ms)
+		LoadAssemblies (630ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (516ms)
+			TypeCache.Refresh (348ms)
+				TypeCache.ScanAssembly (317ms)
+			BuildScriptInfoCaches (148ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (1705ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1412ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (409ms)
+			ProcessInitializeOnLoadAttributes (707ms)
+			ProcessInitializeOnLoadMethodAttributes (266ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+WARNING: Shader Unsupported: 'Hidden/Toon Shaders Pro/URP/Toon (Terrain Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Toon Shaders Pro/URP/Toon (Terrain Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 17.64 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8926 unused Assets / (6.8 MB). Loaded Objects now: 9731.
+Memory consumption went from 168.7 MB to 161.9 MB.
+Total: 30.620200 ms (FindLiveObjects: 1.305900 ms CreateObjectMapping: 2.493000 ms MarkObjects: 17.229100 ms  DeleteObjects: 9.590200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 18505.085607 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon Terrain/TerrainLitBase.shader
+  artifactKey: Guid(6bcab5bf85845804594f04377b564ca9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon Terrain/TerrainLitBase.shader using Guid(6bcab5bf85845804594f04377b564ca9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1752f268b6b8c5e6347375192306ffda') in 0.1522452 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Mushroom_Sunset_Demo.unity
+  artifactKey: Guid(53ea62e291a892c489fdb14854b97dde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Mushroom_Sunset_Demo.unity using Guid(53ea62e291a892c489fdb14854b97dde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8e4f557c2a2fe46df4d361c2259a943f') in 0.0144176 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Mountains_Art_Demo.unity
+  artifactKey: Guid(2f6c412612a24334f906cd3a9139b020) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Mountains_Art_Demo.unity using Guid(2f6c412612a24334f906cd3a9139b020) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '20bfb6aed75f6067adef3211dbc3e674') in 0.0151654 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon Terrain/TerrainLitDepthNormalsPass.hlsl
+  artifactKey: Guid(c921ca326dc34ab4dba515a076457031) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon Terrain/TerrainLitDepthNormalsPass.hlsl using Guid(c921ca326dc34ab4dba515a076457031) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '49c25b955b27c5ef83ae9c5a6a93c0c0') in 0.0141855 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Textures/Particles/dirt_03.png
+  artifactKey: Guid(5c637554b6ab740479fd5448afeb69a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Textures/Particles/dirt_03.png using Guid(5c637554b6ab740479fd5448afeb69a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a7b856ab0976e98c3208449589e811be') in 0.0887306 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Hills_Art_Demo.unity
+  artifactKey: Guid(01f7985cee7cbcc4689463469794e58f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Hills_Art_Demo.unity using Guid(01f7985cee7cbcc4689463469794e58f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7fd2f97a67155a3fa94817de2218b9b1') in 0.0207914 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/02Scenes/TestScene/Make_Player.unity
+  artifactKey: Guid(98dd9ce592bb93f4ca247941b7e8363c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/02Scenes/TestScene/Make_Player.unity using Guid(98dd9ce592bb93f4ca247941b7e8363c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5b5d730e89006ac9b7559a8d76fb398f') in 0.0116936 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Textures/Rock/Rock028_1K-PNG_NormalGL.png
+  artifactKey: Guid(878b820c2509cfb45b41d786e219421f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Textures/Rock/Rock028_1K-PNG_NormalGL.png using Guid(878b820c2509cfb45b41d786e219421f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74f80ab20cd835fee0af33cfd54e4197') in 0.0241637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Scripts/OutlineFeature.cs
+  artifactKey: Guid(9f54efd94bcf7bd43a040de64f3878af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Scripts/OutlineFeature.cs using Guid(9f54efd94bcf7bd43a040de64f3878af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '113694101fbac4d27d995f53835c6c15') in 0.0239439 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/DemoScene.unity
+  artifactKey: Guid(911be6be89c63334595ad4ac54e63b96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/DemoScene.unity using Guid(911be6be89c63334595ad4ac54e63b96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '43dc153517ebe7a31032b8b4ad246246') in 0.019843 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Forest_Sunset_Demo.unity
+  artifactKey: Guid(38a72900f907b1348a3a4666f2d2f131) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Forest_Sunset_Demo.unity using Guid(38a72900f907b1348a3a4666f2d2f131) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '14ef39f3bb05bf3a93bb29f9d629044e') in 0.013486 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/Sand Particles.mat
+  artifactKey: Guid(47ab6101dc41ad54ba73efcae124e385) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/Sand Particles.mat using Guid(47ab6101dc41ad54ba73efcae124e385) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd6d5938704799c50655ef201c1e6c18d') in 0.0421186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/Toon 2.mat
+  artifactKey: Guid(9848dffd0c4768443b17c654b344903b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/Toon 2.mat using Guid(9848dffd0c4768443b17c654b344903b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f704adb6ae181aaf99bccd36551bf583') in 0.0193285 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline
+  artifactKey: Guid(8e0593842df6a574aa6ed4699a710d69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline using Guid(8e0593842df6a574aa6ed4699a710d69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6bfeed6b08071e45e92c008c2018a952') in 0.0118615 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/forest_night.png
+  artifactKey: Guid(86faf1774eac1ac4183816869545fa1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/forest_night.png using Guid(86faf1774eac1ac4183816869545fa1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8c63ebe3157402a946f2125b3884050a') in 0.024607 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/05Prefab/Player.prefab
+  artifactKey: Guid(d3be277fc3a8a8b40af67b70e055c1fd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/05Prefab/Player.prefab using Guid(d3be277fc3a8a8b40af67b70e055c1fd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7aa5f41e5b65678426c4c1c726627dae') in 0.1254779 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 24
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Scripts/VertexColorRandom.cs
+  artifactKey: Guid(20209802e1c1575419365e684ea8d4b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Scripts/VertexColorRandom.cs using Guid(20209802e1c1575419365e684ea8d4b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '402c78b044b59d25ffa1344b0cbec069') in 0.0127152 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Subgraphs/CalculateToonLighting.shadersubgraph
+  artifactKey: Guid(2df8d395bf508ed4da8d082aac6be999) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Subgraphs/CalculateToonLighting.shadersubgraph using Guid(2df8d395bf508ed4da8d082aac6be999) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aef8db30792ed471d4b77b900f263f0e') in 0.0322686 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/URP-Toon-Renderer.asset
+  artifactKey: Guid(cbcea0af1c8130d46a99aa58c0c3f865) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/URP-Toon-Renderer.asset using Guid(cbcea0af1c8130d46a99aa58c0c3f865) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '93cb880d099e5fba3dc8f645e3aeff10') in 0.0769454 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Subgraphs/MixFog.hlsl
+  artifactKey: Guid(07999c08e2288f74786935b4a3a4e4ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Subgraphs/MixFog.hlsl using Guid(07999c08e2288f74786935b4a3a4e4ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '25e69a6b17ff149a1b4be986a528a429') in 0.0128862 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Space.mat
+  artifactKey: Guid(7f6130ccef6198f4394f67c377133ce6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Space.mat using Guid(7f6130ccef6198f4394f67c377133ce6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3b8caba386c75a5ba90471add65b1af2') in 0.025921 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Prefabs/Worm.prefab
+  artifactKey: Guid(a2372392839118e40b1743f41f592f6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Prefabs/Worm.prefab using Guid(a2372392839118e40b1743f41f592f6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '984a963ba3417f503adc7906f09b5fb7') in 0.0526034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 80
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/city.png
+  artifactKey: Guid(9ad01c4a341749a49a0c35c727309f6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/city.png using Guid(9ad01c4a341749a49a0c35c727309f6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3463f345fa8867387e34c1e08bdbb010') in 0.0238494 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/WormTeeth.mat
+  artifactKey: Guid(f1994becacdb756478d66376f660d6f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/WormTeeth.mat using Guid(f1994becacdb756478d66376f660d6f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3c4ea2c154c8b7d3495fc395664905de') in 0.0169032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/Transparent.mat
+  artifactKey: Guid(a98494ffb0dba044abb738a8ee0a695c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Materials/Transparent.mat using Guid(a98494ffb0dba044abb738a8ee0a695c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1a34d4003e5afae0c06ea9cad2274ea6') in 0.0182808 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Resources/MaskObject.shader
+  artifactKey: Guid(097f19db2ce89c04485e466694effb88) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Resources/MaskObject.shader using Guid(097f19db2ce89c04485e466694effb88) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '12c46862c8eeeaf64ab45058218d7c3e') in 0.013851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo/Terrain/RockLayer.terrainlayer
+  artifactKey: Guid(ba4e23199a2dd234ab82a642bb670d07) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo/Terrain/RockLayer.terrainlayer using Guid(ba4e23199a2dd234ab82a642bb670d07) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '085eed0ac394280142049de520d8f68d') in 0.0253143 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Demo
+  artifactKey: Guid(d951539bc3ed5c340b7fb9993ee8b291) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Demo using Guid(d951539bc3ed5c340b7fb9993ee8b291) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '63d9006534fbf3c520f12a90f23222e4') in 0.0139579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/hills_art.png
+  artifactKey: Guid(98030ee2070d1f040a6a59264ad67e4d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/hills_art.png using Guid(98030ee2070d1f040a6a59264ad67e4d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f288efdc1a35ea03d935b68798ea7097') in 0.0263868 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/hills_art_sunset.png
+  artifactKey: Guid(2ff6b257c27ece146a7559147047573f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/hills_art_sunset.png using Guid(2ff6b257c27ece146a7559147047573f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f48fd7ada796fb646b2d5591e2a4f368') in 0.0272028 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Artic.mat
+  artifactKey: Guid(44aafc914da1f22419757ced62eb246b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Artic.mat using Guid(44aafc914da1f22419757ced62eb246b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f8846f3de500cb2b3f8a29b31f6e627c') in 0.0204674 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon Terrain/TerrainLitAdd.shader
+  artifactKey: Guid(51f6aa7ff9b5ea541baace16397be419) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon Terrain/TerrainLitAdd.shader using Guid(51f6aa7ff9b5ea541baace16397be419) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3dca60727050282b62c81b2667d5db28') in 0.0164485 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Textures/Sand/Ground033_1K-PNG_Roughness.png
+  artifactKey: Guid(04e0b59a90137e549a8a76af26bb76f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Textures/Sand/Ground033_1K-PNG_Roughness.png using Guid(04e0b59a90137e549a8a76af26bb76f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a2421841a925a993244484c89ff894b7') in 0.0291269 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/artic_ice.png
+  artifactKey: Guid(3e1adfff0307a7240abb6111aab73277) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/artic_ice.png using Guid(3e1adfff0307a7240abb6111aab73277) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '370fbc8be32bce3da7e22b98b69c2810') in 0.0249223 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/City_Demo.unity
+  artifactKey: Guid(20003435a930af94eacaf898f0314d12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/City_Demo.unity using Guid(20003435a930af94eacaf898f0314d12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8a51e163d8bc9744f71e1a937593fc13') in 0.0123913 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Snow_Village.mat
+  artifactKey: Guid(62ea576d8909c444587b99989e777c66) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Snow_Village.mat using Guid(62ea576d8909c444587b99989e777c66) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '742abf74ab3f130745d220297e67763c') in 0.0175435 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Resources
+  artifactKey: Guid(08cbc2aa78ff3c7488fdafad4c62f28e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Resources using Guid(08cbc2aa78ff3c7488fdafad4c62f28e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5d01dd9066c89dbd6b6e84c638860bb0') in 0.0140794 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Hills_Art.mat
+  artifactKey: Guid(83b26219807ab2b478cf6d7f1cd5ff1b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Hills_Art.mat using Guid(83b26219807ab2b478cf6d7f1cd5ff1b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '202ef640a0e6ebb370b30691679605b6') in 0.02122 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/StreamingAssets
+  artifactKey: Guid(05f244f41cfc07943ba482babe3d4384) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/StreamingAssets using Guid(05f244f41cfc07943ba482babe3d4384) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '958ff64a8fb08f00ca44c6e166fb9eba') in 0.0145342 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/forest_sunset.png
+  artifactKey: Guid(5b32a95f3f659b249bd26c3d6df31566) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/forest_sunset.png using Guid(5b32a95f3f659b249bd26c3d6df31566) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fbbd3560ca56994fb9ced04e3b427014') in 0.0260389 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Artic_Demo.unity
+  artifactKey: Guid(f24c487efb14f8b43b3fd214df0fe8c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Artic_Demo.unity using Guid(f24c487efb14f8b43b3fd214df0fe8c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd27cd46dde5441d43c48649e96eccb23') in 0.0161951 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Hills_Art_Sunset.mat
+  artifactKey: Guid(fa754103425f24745b6edaf85127cf47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Hills_Art_Sunset.mat using Guid(fa754103425f24745b6edaf85127cf47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c975776f35b4608f5dce2c8eeeeeac5b') in 0.0189466 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/ToonInput.hlsl
+  artifactKey: Guid(72c6837ed8e9dc64ea152ebd6b100e96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/ToonInput.hlsl using Guid(72c6837ed8e9dc64ea152ebd6b100e96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1d84abcb829c887b5fc218d49cdcaa16') in 0.0135019 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Scripts/ToonShaderUtility.cs
+  artifactKey: Guid(96450d1f852c8d24b8ce47f8834e069a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Outline/Scripts/ToonShaderUtility.cs using Guid(96450d1f852c8d24b8ce47f8834e069a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '32d0dd628942c0f4d9dcc9b38a9ebec5') in 0.0152826 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Textures
+  artifactKey: Guid(8041942ad1ede5743856c3bfda530a54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Textures using Guid(8041942ad1ede5743856c3bfda530a54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '04ab5a27d73367abee7e205ff0a88f59') in 0.0210061 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Toon (Graph).shadergraph
+  artifactKey: Guid(9d565b512efb79c4c88bd14dfd6accf2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Toon (Graph).shadergraph using Guid(9d565b512efb79c4c88bd14dfd6accf2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '050bc5cce416d45f6b9c46b036862cd2') in 0.0264587 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Textures/mushrooms_sunset.png
+  artifactKey: Guid(d6f11a8c690fc134ba6a992b6802d16e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Textures/mushrooms_sunset.png using Guid(d6f11a8c690fc134ba6a992b6802d16e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33b12070536e65cffe7a69a6acd579f6') in 0.0685976 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Textures/Sand
+  artifactKey: Guid(85ca2efb4c860624a9fa0b7d3bd79ae9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Textures/Sand using Guid(85ca2efb4c860624a9fa0b7d3bd79ae9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fc8bcd4e154f49421bbc1f333389e915') in 0.0155365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/02Scenes/TestScene/Test_GameScene.unity
+  artifactKey: Guid(cf02030cee9e5c04aba18e32be4b87f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/02Scenes/TestScene/Test_GameScene.unity using Guid(cf02030cee9e5c04aba18e32be4b87f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5ef24db91bb8f9e1287e8bb4c87a1e3a') in 0.0359355 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Editor/Vector2Drawer.cs
+  artifactKey: Guid(2c9daf6dc18acd2478ac7c95478d1f29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon/Editor/Vector2Drawer.cs using Guid(2c9daf6dc18acd2478ac7c95478d1f29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6a4617903976d7829212925ed57e533a') in 0.0309087 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Mountains.mat
+  artifactKey: Guid(848b200f4dc5d1d449a479cc37c9c815) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Mountains.mat using Guid(848b200f4dc5d1d449a479cc37c9c815) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dfa0ba7bb0b4a83454e59e884d91bbbe') in 0.0190793 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/01ImportAssets/Surreal-Skyboxes/Mountains_Art_Sunset.mat
+  artifactKey: Guid(b06e7967d72794b498df6b9e1173471a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Surreal-Skyboxes/Mountains_Art_Sunset.mat using Guid(b06e7967d72794b498df6b9e1173471a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '05d099a5d14a9591eded7dd54e4380ee') in 0.0211306 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon
+  artifactKey: Guid(cf2cac1a3ace0da4b8bc61adb0d1607a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Toon Shaders Pro/Shaders/Toon using Guid(cf2cac1a3ace0da4b8bc61adb0d1607a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '00f2bf6c02277482a6d037c37c29d6bc') in 0.0119242 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.564623 seconds.
+  path: Assets/02Scenes/TestScene/Test_GameScene.unity
+  artifactKey: Guid(cf02030cee9e5c04aba18e32be4b87f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02Scenes/TestScene/Test_GameScene.unity using Guid(cf02030cee9e5c04aba18e32be4b87f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dbdc4259276e61dd4f78399077b4b392') in 0.0008098 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 21154.946661 seconds.
+  path: Assets/01ImportAssets/Idle.fbx
+  artifactKey: Guid(5d58d2c5620f313498b2c32345ee0a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Idle.fbx using Guid(5d58d2c5620f313498b2c32345ee0a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88f59c2878017f19f9001e2098352cd8') in 7.1204898 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 141
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/01ImportAssets/Jumping.fbx
+  artifactKey: Guid(338c44b11e870924dabf8276ea9262e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Jumping.fbx using Guid(338c44b11e870924dabf8276ea9262e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7c7c0e4b1cadc861278f451997e9d874') in 0.0875222 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 141
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/01ImportAssets/Slow Run.fbx
+  artifactKey: Guid(5b0b4f07b41e62445b8d38e8394d61ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Slow Run.fbx using Guid(5b0b4f07b41e62445b8d38e8394d61ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '251516efe41bacff3f61ca0af86a0583') in 0.0854359 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 141
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.286644 seconds.
+  path: Assets/01ImportAssets/Charator
+  artifactKey: Guid(fc98d503cf7324a4cb6e540d1cb4d111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Charator using Guid(fc98d503cf7324a4cb6e540d1cb4d111) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b48709c023681ec2ca0083f747e662dc') in 0.0010949 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.868755 seconds.
+  path: Assets/01ImportAssets/Charator
+  artifactKey: Guid(fc98d503cf7324a4cb6e540d1cb4d111) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator using Guid(fc98d503cf7324a4cb6e540d1cb4d111) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '729d15968db1d3729243dcd232b4917b') in 0.0132161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.190879 seconds.
+  path: Assets/01ImportAssets/Charator/Jumping.fbx
+  artifactKey: Guid(338c44b11e870924dabf8276ea9262e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Jumping.fbx using Guid(338c44b11e870924dabf8276ea9262e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ce6aef49363b894553d7ff1d36802297') in 0.0387713 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 141
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.641201 seconds.
+  path: Assets/01ImportAssets/Charator/Idle.fbx
+  artifactKey: Guid(5d58d2c5620f313498b2c32345ee0a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Charator/Idle.fbx using Guid(5d58d2c5620f313498b2c32345ee0a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5a1bb02b04ada485939334600a578bb4') in 5.5131015 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 147
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1001_Specular.png
+  artifactKey: Guid(3d1a018d97b1c214385e25cedf87ab7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Ch44_1001_Specular.png using Guid(3d1a018d97b1c214385e25cedf87ab7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f10c3aa91956f398dab464f604cba01') in 0.0205111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1001_Normal.png
+  artifactKey: Guid(4845d036508de714fa74c715dd625847) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Ch44_1001_Normal.png using Guid(4845d036508de714fa74c715dd625847) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c27b596a017d25624ac41351317a8e17') in 0.0250875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1002_Emissive.png
+  artifactKey: Guid(e126999211e018b4b87bc59f0a3ba7ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Ch44_1002_Emissive.png using Guid(e126999211e018b4b87bc59f0a3ba7ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'edd6ef23589821f1cccdce0b5222a957') in 0.0237149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.061878 seconds.
+  path: Assets/01ImportAssets/Charator/Slow Run.fbx
+  artifactKey: Guid(5b0b4f07b41e62445b8d38e8394d61ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Charator/Slow Run.fbx using Guid(5b0b4f07b41e62445b8d38e8394d61ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd032502cc5c73f92db01a6d7b0770ebb') in 0.1693654 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 147
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1002_Glossiness 1.png
+  artifactKey: Guid(29ef2967e7f4c474eaff761d937b654c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Charator/Ch44_1002_Glossiness 1.png using Guid(29ef2967e7f4c474eaff761d937b654c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e38df62040ad18648738e4bf3c881a07') in 0.0382519 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1002_Specular 1.png
+  artifactKey: Guid(6328b731d32bd414da42a50ff1d64608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01ImportAssets/Charator/Ch44_1002_Specular 1.png using Guid(6328b731d32bd414da42a50ff1d64608) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce783466a0e4221b022ea06d268a0d1b') in 0.0273201 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.553943 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1001_Emissive 1.png
+  artifactKey: Guid(584c84d60d1f7ae44a6548b8215e376e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Ch44_1001_Emissive 1.png using Guid(584c84d60d1f7ae44a6548b8215e376e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a38c18a6b9dfc3e48cbd14f98bb08f1b') in 0.0270545 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/01ImportAssets/Charator/Slow Run.fbx
+  artifactKey: Guid(5b0b4f07b41e62445b8d38e8394d61ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Slow Run.fbx using Guid(5b0b4f07b41e62445b8d38e8394d61ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f90273ce5e048f56a6f270dbdd87590f') in 0.0557806 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 147
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/01ImportAssets/Charator/Ch44_1001_Diffuse 1.png
+  artifactKey: Guid(4bf6f77356ca60d4e8db8eaba21ba8cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/01ImportAssets/Charator/Ch44_1001_Diffuse 1.png using Guid(4bf6f77356ca60d4e8db8eaba21ba8cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '58768e85dabc79fc061e5cfc66d07bbc') in 0.0280009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

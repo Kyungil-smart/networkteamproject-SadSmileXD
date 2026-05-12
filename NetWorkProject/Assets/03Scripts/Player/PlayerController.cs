@@ -88,13 +88,12 @@ public class PlayerController : NetworkBehaviour
     }
 
 
-    // ==========================================
-    // 3. 서버 물리 연산 (Server Side)
-    // ==========================================
+   
+    //   서버 물리 연산 (Server Side)
     private void FixedUpdate()
     {
         const float defaultValue = 1f;
-        if (!IsServer) return;
+        if (!IsOwner) return;
 
         // 변경된 부분: 단순히 new Vector3가 아니라, 캐릭터의 앞(forward)과 옆(right)을 기준으로 계산
         // transform.forward: 캐릭터가 바라보는 앞방향
@@ -106,8 +105,8 @@ public class PlayerController : NetworkBehaviour
         float currentYVelocity = m_rigid.linearVelocity.y;
 
         // Y축 속도(중력 등) 유지
-        targetVelocity.y = Mathf.Max(currentYVelocity, maxFallSpeed);
-
+         targetVelocity.y = Mathf.Max(currentYVelocity, maxFallSpeed);
+       
         float control = isJumping ? airControlMultiplier : defaultValue;
 
         // 최종 속도 적용
