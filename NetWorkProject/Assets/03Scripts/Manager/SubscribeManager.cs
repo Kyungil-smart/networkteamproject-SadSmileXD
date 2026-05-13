@@ -21,6 +21,11 @@ public enum SubscribeType
     PlayerSpawnCountDown,
     ///
     PlayerWinLose, //플레이어 승패
+    //
+    OnWinCanvas,
+    OnLoseCanvas,
+    OFFWinCanvas,
+    OFFLoseCanvas,
 
 }
 

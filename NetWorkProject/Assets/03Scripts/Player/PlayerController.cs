@@ -1,6 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -89,17 +92,27 @@ public class PlayerController : NetworkBehaviour
 
     private void OnGameFinished(ulong winnerId)
     {
+       
         Time.timeScale = 0;
         // 서버에서 온 우승자 ID와 내 ID 비교
         if (winnerId == customPlayerId.Value)
         {
             Debug.Log("<color=cyan>★ 우승: 당신이 최후의 생존자입니다! ★</color>");
-            // 승리 UI 처리
+            SubscribeManager.instance.Publish(SubscribeType.OnWinCanvas);
+            
+
+
         }
         else
         {
             Debug.Log("<color=red>☆ 패배: 당신은 우승하지 못했습니다. ☆</color>");
+            SubscribeManager.instance.Publish(SubscribeType.OnLoseCanvas);
             // 패배 UI 처리
+        }
+        // 3. 씬 이동 처리 (호스트/서버만 실행)
+        if (IsServer)
+        {
+            StartCoroutine(LoadNextScene());
         }
     }
 
@@ -123,4 +136,11 @@ public class PlayerController : NetworkBehaviour
         float control = isJumping ? airControlMultiplier : 1f;
         m_rigid.linearVelocity = new Vector3(targetVelocity.x * control, targetVelocity.y, targetVelocity.z * control);
     }
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        Time.timeScale = 1.0f;
+        NetworkManager.Singleton.SceneManager.LoadScene("Test_ServerJoin", LoadSceneMode.Single);
+    }
+    
 }

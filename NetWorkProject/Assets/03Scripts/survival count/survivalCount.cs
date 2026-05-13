@@ -67,7 +67,9 @@ public class survivalCount : NetworkBehaviour
     private void NotifyWinnerClientRpc(ulong winnerId)
     {
         Debug.Log($"[클라이언트] 우승자 발표: {winnerId}");
+        
         // 모든 클라이언트의 PlayerController가 이 소식을 듣게 합니다.
         SubscribeManager.instance.Publish(SubscribeType.PlayerWinLose, winnerId);
     }
+     
 }

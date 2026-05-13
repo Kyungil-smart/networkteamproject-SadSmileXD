@@ -1752,7 +1752,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/02Scenes/TestScene
+    - Assets/01ImportAssets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1762,29 +1762,29 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/02Scenes/TestScene
+  - Assets/01ImportAssets
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Unity\networkteamproject-SadSmileXD\NetWorkProject
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 98}
+    scrollPos: {x: 0, y: 38}
     m_SelectedIDs:
-    - m_Data: 58130
+    - m_Data: 58126
     m_LastClickedID:
-      m_Data: 58130
+      m_Data: 58126
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 57990
-    - m_Data: 57992
-    - m_Data: 57994
-    - m_Data: 57996
-    - m_Data: 57998
-    - m_Data: 58000
-    - m_Data: 58002
-    - m_Data: 58004
-    - m_Data: 58006
+    - m_Data: 58026
+    - m_Data: 58028
+    - m_Data: 58030
+    - m_Data: 58032
+    - m_Data: 58034
+    - m_Data: 58036
+    - m_Data: 58038
+    - m_Data: 58040
+    - m_Data: 58042
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1817,15 +1817,15 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 57990
-    - m_Data: 57992
-    - m_Data: 57994
-    - m_Data: 57996
-    - m_Data: 57998
-    - m_Data: 58000
-    - m_Data: 58002
-    - m_Data: 58004
-    - m_Data: 58006
+    - m_Data: 58026
+    - m_Data: 58028
+    - m_Data: 58030
+    - m_Data: 58032
+    - m_Data: 58034
+    - m_Data: 58036
+    - m_Data: 58038
+    - m_Data: 58040
+    - m_Data: 58042
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1852,8 +1852,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 74926
+    m_LastClickedInstanceID: 74926
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 75734
@@ -2031,12 +2032,24 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -5320
-      - m_Data: -4222
-      - m_Data: -4010
-      - m_Data: -3092
-      - m_Data: -2846
-      - m_Data: -2628
+      - m_Data: -184244
+      - m_Data: -184032
+      - m_Data: -182272
+      - m_Data: -182038
+      - m_Data: -181770
+      - m_Data: -181556
+      - m_Data: -78000
+      - m_Data: -77752
+      - m_Data: -77510
+      - m_Data: -77126
+      - m_Data: -72344
+      - m_Data: -72126
+      - m_Data: -71694
+      - m_Data: -71474
+      - m_Data: -71224
+      - m_Data: -70972
+      - m_Data: -70702
+      - m_Data: -70472
       - m_Data: -1304
       - m_Data: -12
       m_RenameOverlay:
