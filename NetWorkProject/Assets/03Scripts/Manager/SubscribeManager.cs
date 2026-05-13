@@ -16,6 +16,11 @@ public enum SubscribeType
     SendMessage,
     //=============
     AddUserName,
+    //----------
+    PlayerSpawnCountUp, //플레이어 스폰
+    PlayerSpawnCountDown,
+    ///
+    PlayerWinLose, //플레이어 승패
 
 }
 
