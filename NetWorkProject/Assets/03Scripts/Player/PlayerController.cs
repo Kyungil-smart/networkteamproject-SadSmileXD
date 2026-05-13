@@ -139,6 +139,20 @@ public class PlayerController : NetworkBehaviour
     IEnumerator LoadNextScene()
     {
         yield return new WaitForSecondsRealtime(3f);
+        // 현재 접속된 모든 클라이언트의 정보를 가져옵니다.
+        var clients = NetworkManager.Singleton.ConnectedClientsList;
+
+        // 역순으로 돌거나 리스트를 복사해서 도는 것이 안전합니다.
+        for (int i = clients.Count - 1; i >= 0; i--)
+        {
+            var client = clients[i];
+            if (client.PlayerObject != null)
+            {
+                // true를 넣으면 네트워크 상에서 제거됨과 동시에 
+                // 유니티 씬에서도 해당 오브젝트를 파괴(Destroy)합니다.
+                client.PlayerObject.Despawn(true);
+            }
+        }
         Time.timeScale = 1.0f;
         NetworkManager.Singleton.SceneManager.LoadScene("Test_ServerJoin", LoadSceneMode.Single);
     }
