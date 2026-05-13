@@ -23,9 +23,14 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private float airControlMultiplier = 0.5f;
 
     public NetworkVariable<ulong> customPlayerId = new NetworkVariable<ulong>(0);
-
+    public GameObject parent;
+    private void Awake()
+    {
+        DontDestroyOnLoad(parent);
+    }
     public override void OnNetworkSpawn()
     {
+      
         if (IsServer)
         {
             // 1. 서버가 고유 ID 부여
@@ -36,6 +41,7 @@ public class PlayerController : NetworkBehaviour
 
         if (IsOwner)
         {
+
             m_rigid.sleepThreshold = 0f;
             m_rigid.WakeUp();
             Debug.Log($"나의 아이디 : {customPlayerId.Value}");
@@ -93,14 +99,12 @@ public class PlayerController : NetworkBehaviour
     private void OnGameFinished(ulong winnerId)
     {
        
-        Time.timeScale = 0;
+        
         // 서버에서 온 우승자 ID와 내 ID 비교
         if (winnerId == customPlayerId.Value)
         {
             Debug.Log("<color=cyan>★ 우승: 당신이 최후의 생존자입니다! ★</color>");
             SubscribeManager.instance.Publish(SubscribeType.OnWinCanvas);
-            
-
 
         }
         else
@@ -120,9 +124,23 @@ public class PlayerController : NetworkBehaviour
     {
         if (IsOwner)
         {
+            foreach (PlayerBase Logic in m_PlayerData)
+            {
+                if (Logic is PlayerRun Run_Logic)
+                {
+                    InputManager.instance.input.Player.Move.performed -= Run_Logic.Execute;
+                    InputManager.instance.input.Player.Move.canceled -= Run_Logic.Execute;
+                    Debug.Log("PlayerRun 이벤트 언구독 완료1");
+                }
+                else if (Logic is PlayerJump Jump_Logic)
+                {
+                    InputManager.instance.input.Player.Jump.started -= Jump_Logic.Execute;
+                    Debug.Log("PlayerRun 이벤트 언구독 완료2");
+                }
+            }
             SubscribeManager.instance.Unsubscribe<ulong>(SubscribeType.PlayerWinLose, OnGameFinished);
             InputManager.instance.input.Player.Disable();
-            // 이벤트 해제 로직 생략...
+           
         }
     }
 
@@ -136,11 +154,44 @@ public class PlayerController : NetworkBehaviour
         float control = isJumping ? airControlMultiplier : 1f;
         m_rigid.linearVelocity = new Vector3(targetVelocity.x * control, targetVelocity.y, targetVelocity.z * control);
     }
+    IEnumerator freeobject()
+    {
+        // 1. 우선 0.5초 대기 (에디터 도구가 정리될 시간 확보)
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        // 2. 디스폰 완료 이벤트 발행
+        if (SubscribeManager.instance != null)
+            SubscribeManager.instance.Publish(SubscribeType.DeSpawnObjectsComplete);
+
+        // 3. 모든 플레이어 오브젝트 일괄 디스폰
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
+        {
+            var clients = NetworkManager.Singleton.ConnectedClientsList;
+            for (int i = clients.Count - 1; i >= 0; i--)
+            {
+                var client = clients[i];
+                if (client.PlayerObject != null)
+                {
+                    client.PlayerObject.Despawn(true);
+                }
+            }
+        }
+
+        Debug.Log("모든 오브젝트 정리 완료");
+    }
     IEnumerator LoadNextScene()
     {
-        yield return new WaitForSecondsRealtime(3f);
-        Time.timeScale = 1.0f;
+
+        // ★ 핵심: freeobject 코루틴이 끝날 때까지 여기서 멈춰서 기다립니다.
+        yield return StartCoroutine(freeobject());
+
+        // 위 코루틴이 완전히 종료된 후 아래 코드가 실행됩니다.
+        Debug.Log("씬 이동을 시작합니다.");
+
+        // 씬 이동 전 시간 복구 (클라이언트 시간 문제는 다음 씬 Awake 등에서 처리 권장)
+       
+
         NetworkManager.Singleton.SceneManager.LoadScene("Test_ServerJoin", LoadSceneMode.Single);
     }
-    
+   
 }

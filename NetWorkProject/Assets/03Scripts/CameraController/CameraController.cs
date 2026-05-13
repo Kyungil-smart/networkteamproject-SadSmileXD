@@ -7,12 +7,15 @@ public class playerRotation : MonoBehaviour
 
     private float _yRotation = 0f;
 
-    void Start()
+   
+    private void OnEnable()
     {
-        // 마우스 커서를 화면 중앙에 고정하고 숨김 처리 (FPS 게임 스타일)
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    private void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     void Update()
     {
         // 1. 마우스의 가로 이동량 가져오기

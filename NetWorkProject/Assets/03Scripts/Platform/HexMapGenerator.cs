@@ -48,6 +48,6 @@ public class HexMapGenerator : NetworkBehaviour
                  
             }
         }
-       
+       //this.NetworkObject.Despawn();
     }
 }
