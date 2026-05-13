@@ -3,16 +3,24 @@ using UnityEngine;
 
 public class DeadZone : NetworkBehaviour
 {
-     private void OnTriggerEnter(Collider other)
+    private bool flag = false;
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            if (!IsOwner) return;
-            other.gameObject.GetComponent<NetworkObject>().Despawn();
-            // 플레이어가 사망 구역에 들어왔을 때 처리할 로직
-            Debug.Log("Player entered the Dead Zone!");
-                
-            // 예: 플레이어의 체력을 0으로 만들거나, 리스폰 위치로 이동시키는 등의 처리를 할 수 있습니다.
+            // 1. 부딪힌 오브젝트에서 PlayerController를 가져옴
+            var playerController = other.GetComponentInChildren<PlayerController>();
+
+            if (playerController != null)
+            {
+                // 2. 중요: 부딪힌 '그 플레이어'가 로컬 플레이어(나)인지 확인
+                if (playerController.IsOwner&& flag==false)
+                {
+                    flag = true;
+                    Debug.Log("내가 데드존에 들어감!");
+                    playerController.Die();
+                }
+            }
         }
     }
 }

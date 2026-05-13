@@ -19,7 +19,6 @@ public class HexMapGenerator : NetworkBehaviour
             m_color.Value = new Color(Random.value, Random.value, Random.value);
         }
         mpb = new MaterialPropertyBlock();
-       
         Generate();
     }
     void Generate()
@@ -42,12 +41,13 @@ public class HexMapGenerator : NetworkBehaviour
                 mpb.Clear();
                 mpb.SetColor("_BaseColor", m_color.Value);
                 var prefab = Instantiate(hexPrefab, pos, Quaternion.Euler(-90, 0, 0));
+
                 var renderer =
                     prefab.GetComponentInChildren<MeshRenderer>();
                 renderer.SetPropertyBlock(mpb);
-                
+                 
             }
         }
-        this.gameObject.GetComponent<NetworkObject>().Despawn();
+       
     }
 }

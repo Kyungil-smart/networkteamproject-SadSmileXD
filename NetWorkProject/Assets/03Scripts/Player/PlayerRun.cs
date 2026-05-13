@@ -1,4 +1,5 @@
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,13 +10,24 @@ public class PlayerRun : PlayerBase
     [Header("Components")]
     private Rigidbody m_rigid;
     [SerializeField] private PlayerJump m_jump;
-    
+    [SerializeField] private Animator m_animator;
    
     [Header("Settings")]
     [SerializeField] public float moveSpeed = 5f; // 이동 속도
     public Vector2 currentInput;
+    private NetworkVariable<bool> m_IsWalking = new NetworkVariable<bool>(
+      false,
+      NetworkVariableReadPermission.Everyone,
+      NetworkVariableWritePermission.Owner
+  );
 
-//////////////////////////////////////
+    //////////////////////////////////////
+
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner) return;
+        m_IsWalking.OnValueChanged += OnWalkingStateChanged;
+    }
 
     public override void init(NetworkBehaviour Owner, params object[] objects)
     {
@@ -27,22 +39,30 @@ public class PlayerRun : PlayerBase
             }
         }
     }
- 
+
     public override void Execute(InputAction.CallbackContext context)
     {
+        if (!IsOwner) return;
 
         Vector2 inputDir = context.ReadValue<Vector2>();
         // 내 입력값을 서버로 전송!
-        MoveServerRpc(inputDir);
-
-    }
-
-    [ServerRpc]
-    private void MoveServerRpc(Vector2 inputDir)
-    {
-
-        // 서버가 클라이언트의 입력 방향을 저장해둠
         currentInput = inputDir;
+
+        if (context.performed)
+        {
+            m_IsWalking.Value = true;
+        }
+        else
+        {
+            m_IsWalking.Value = false;
+
+        }
     }
+
+    private void OnWalkingStateChanged(bool previousValue, bool newValue)
+    {
+        m_animator.SetBool("isRun",newValue);
+    }
+
 
 }

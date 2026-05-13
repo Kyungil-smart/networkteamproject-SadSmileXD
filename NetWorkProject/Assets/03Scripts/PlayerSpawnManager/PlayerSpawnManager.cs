@@ -23,7 +23,7 @@ public class PlayerSpawnManager : NetworkBehaviour
             GameObject instance = Instantiate(_playerPrefab, sp.position, sp.rotation);
             instance.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
 
-            Debug.Log($"[Spawn] Player {clientId} → {sp.position}");
+            //Debug.Log($"[Spawn] Player {clientId} → {sp.position}");
             index++;
         }
         this.gameObject.GetComponent<NetworkObject>().Despawn();

@@ -1,8 +1,9 @@
-using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VectorGraphics;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -12,108 +13,134 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private List<PlayerBase> m_PlayerData = new List<PlayerBase>();
     [SerializeField] private PlayerRun m_Run;
     [SerializeField] private PlayerJump m_Jump;
+    [SerializeField] private AudioListener m_AudioListener;
+
     [Header("Settings")]
     private float moveSpeed => m_Run.moveSpeed;
-    
-    private Vector2 currentInput=> m_Run.currentInput;
+    private Vector2 currentInput => m_Run.currentInput;
     private bool isJumping => m_Jump.isJumping;
     [SerializeField] private float maxFallSpeed = -9.81f;
     [SerializeField] private float airControlMultiplier = 0.5f;
+
+    public NetworkVariable<ulong> customPlayerId = new NetworkVariable<ulong>(0);
+
     public override void OnNetworkSpawn()
     {
-        Debug.Log("OnNetworkSpawn");
-        // 1. 내가 조종하는 내 캐릭터일 때 (권한 확인 완료된 시점)
+        if (IsServer)
+        {
+            // 1. 서버가 고유 ID 부여
+            customPlayerId.Value = (ulong)Random.Range(1000, 9999) + OwnerClientId;
+            // 2. 서버 매니저에게 즉시 등록
+            SubscribeManager.instance.Publish(SubscribeType.PlayerSpawnCountUp, customPlayerId.Value);
+        }
+
         if (IsOwner)
         {
-            Debug.Log("IsOwner");
-            InputManager.instance.input.Player.Enable();
+            m_rigid.sleepThreshold = 0f;
+            m_rigid.WakeUp();
+            Debug.Log($"나의 아이디 : {customPlayerId.Value}");
+            // 3. 승리/패배 공보 구독
+            SubscribeManager.instance.Subscribe<ulong>(SubscribeType.PlayerWinLose, OnGameFinished);
 
-            foreach (PlayerBase init_Data in m_PlayerData)
-            {
-                init_Data.init(null, m_rigid);
-            }
-            Debug.Log("init_Data");
+            InputManager.instance.input.Player.Enable();
+            foreach (PlayerBase init_Data in m_PlayerData) init_Data.init(null, m_rigid);
+
             foreach (PlayerBase Logic in m_PlayerData)
             {
-                Debug.Log("foreach");
                 if (Logic is PlayerRun Run_Logic)
                 {
-                    Debug.Log("(Logic is PlayerRun Run_Logic");
                     InputManager.instance.input.Player.Move.performed += Run_Logic.Execute;
                     InputManager.instance.input.Player.Move.canceled += Run_Logic.Execute;
                 }
-                else if(Logic is PlayerJump Jump_Logic)
+                else if (Logic is PlayerJump Jump_Logic)
                 {
                     InputManager.instance.input.Player.Jump.started += Jump_Logic.Execute;
                 }
             }
-
-          
         }
-        // 2. 남의 캐릭터일 때
         else
         {
-            if (m_Camera == null) return;
-            var id = this.gameObject.GetComponentInParent<NetworkObject>().NetworkObjectId;
-            spectatormode.Instance.CarmeraPush(id, m_Camera);
-            m_Camera.SetActive(false);
+            // 남의 캐릭터 설정
+            if (m_Camera != null) m_Camera.SetActive(false);
+            if (m_AudioListener != null) m_AudioListener.enabled = false;
+        }
+    }
+
+    // [중요] 데드존 등에서 호출할 탈락 함수
+    public void Die()
+    {
+        if (IsOwner)
+        {
+            if (customPlayerId.Value == 0)
+            {
+                Debug.LogWarning("ID가 아직 할당되지 않아 탈락 처리를 보류합니다.");
+                return;
+            }
+            Debug.Log("내가 탈락함 - 서버에 보고합니다.");
+            // 서버에 내 ID를 보내서 리스트에서 지워달라고 함
+            ReportDeathServerRpc(customPlayerId.Value);
+        }
+    }
+
+    [Rpc(SendTo.Server,InvokePermission = RpcInvokePermission.Everyone)]
+    private void ReportDeathServerRpc(ulong id)
+    {
+        Debug.Log("ReportDeathServerRpc 실행");
+        // 서버의 survivalCount가 이 이벤트를 듣고 리스트에서 지움
+        SubscribeManager.instance.Publish(SubscribeType.PlayerSpawnCountDown, id);
+    }
+
+    private void OnGameFinished(ulong winnerId)
+    {
+       
+        Time.timeScale = 0;
+        // 서버에서 온 우승자 ID와 내 ID 비교
+        if (winnerId == customPlayerId.Value)
+        {
+            Debug.Log("<color=cyan>★ 우승: 당신이 최후의 생존자입니다! ★</color>");
+            SubscribeManager.instance.Publish(SubscribeType.OnWinCanvas);
+            
+
+
+        }
+        else
+        {
+            Debug.Log("<color=red>☆ 패배: 당신은 우승하지 못했습니다. ☆</color>");
+            SubscribeManager.instance.Publish(SubscribeType.OnLoseCanvas);
+            // 패배 UI 처리
+        }
+        // 3. 씬 이동 처리 (호스트/서버만 실행)
+        if (IsServer)
+        {
+            StartCoroutine(LoadNextScene());
         }
     }
 
     public override void OnNetworkDespawn()
     {
-        
-        // 오브젝트가 파괴되거나 연결이 끊길 때 이벤트 해제
         if (IsOwner)
         {
-            
-            foreach (PlayerBase Logic in m_PlayerData)
-            {
-               
-                if (Logic is PlayerRun Run_Logic)
-                {
-                    
-                    InputManager.instance.input.Player.Move.performed -= Run_Logic.Execute;
-                    InputManager.instance.input.Player.Move.canceled -= Run_Logic.Execute;
-                }
-                else if (Logic is PlayerJump Jump_Logic)
-                {
-                    InputManager.instance.input.Player.Jump.started -= Jump_Logic.Execute;
-                }
-            }
-            
-
+            SubscribeManager.instance.Unsubscribe<ulong>(SubscribeType.PlayerWinLose, OnGameFinished);
             InputManager.instance.input.Player.Disable();
+            // 이벤트 해제 로직 생략...
         }
     }
 
-
-    // ==========================================
-    // 3. 서버 물리 연산 (Server Side)
-    // ==========================================
     private void FixedUpdate()
     {
-        const float defaultValue = 1f;
-        if (!IsServer) return;
-
-        // 변경된 부분: 단순히 new Vector3가 아니라, 캐릭터의 앞(forward)과 옆(right)을 기준으로 계산
-        // transform.forward: 캐릭터가 바라보는 앞방향
-        // transform.right: 캐릭터의 오른쪽 방향
+        if (!IsOwner) return;
         Vector3 moveDir = (transform.forward * currentInput.y + transform.right * currentInput.x).normalized;
-
         Vector3 targetVelocity = moveDir * moveSpeed;
-
         float currentYVelocity = m_rigid.linearVelocity.y;
-
-        // Y축 속도(중력 등) 유지
         targetVelocity.y = Mathf.Max(currentYVelocity, maxFallSpeed);
-
-        float control = isJumping ? airControlMultiplier : defaultValue;
-
-        // 최종 속도 적용
-        Vector3 MovePos = new Vector3(targetVelocity.x * control, targetVelocity.y, targetVelocity.z * control);
-        m_rigid.linearVelocity = MovePos;
+        float control = isJumping ? airControlMultiplier : 1f;
+        m_rigid.linearVelocity = new Vector3(targetVelocity.x * control, targetVelocity.y, targetVelocity.z * control);
     }
-
-
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        Time.timeScale = 1.0f;
+        NetworkManager.Singleton.SceneManager.LoadScene("Test_ServerJoin", LoadSceneMode.Single);
+    }
+    
 }
