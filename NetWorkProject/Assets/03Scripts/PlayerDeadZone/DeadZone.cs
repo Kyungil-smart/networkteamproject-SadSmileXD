@@ -4,6 +4,11 @@ using UnityEngine;
 public class DeadZone : NetworkBehaviour
 {
     private bool flag = false;
+    public override void OnNetworkDespawn()
+    {
+        //if (!IsServer) return;
+        //SubscribeManager.instance.Publish(SubscribeType.DeSpawnObjects, this.NetworkObject);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,7 +24,9 @@ public class DeadZone : NetworkBehaviour
                     flag = true;
                     Debug.Log("내가 데드존에 들어감!");
                     playerController.Die();
+                    
                 }
+               
             }
         }
     }

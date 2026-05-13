@@ -8,7 +8,8 @@ public class survivalCount : NetworkBehaviour
     public NetworkList<ulong> m_PlayerId = new NetworkList<ulong>();
     public static survivalCount instance { get; private set; }
     public List<int > m_Players = new List<int>();
-    private void Awake()
+  
+    public override void OnNetworkSpawn()
     {
         if (instance == null)
         {
@@ -19,14 +20,21 @@ public class survivalCount : NetworkBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-    public override void OnNetworkSpawn()
-    {
         // 서버만 이벤트를 구독해서 명단을 수정합니다.
         if (IsServer)
         {
+            SubscribeManager.instance.Publish(SubscribeType.DeSpawnObjects, this.NetworkObject);
             SubscribeManager.instance.Subscribe<ulong>(SubscribeType.PlayerSpawnCountUp, PlayerSpawnCountUp);
             SubscribeManager.instance.Subscribe<ulong>(SubscribeType.PlayerSpawnCountDown, PlayerSpawnCountDown);
+        }
+    }
+    public override void OnNetworkDespawn()
+    {
+        if (IsServer)
+        { 
+            SubscribeManager.instance.Unsubscribe<ulong>(SubscribeType.PlayerSpawnCountUp, PlayerSpawnCountUp);
+            SubscribeManager.instance.Unsubscribe<ulong>(SubscribeType.PlayerSpawnCountDown, PlayerSpawnCountDown);
+            m_PlayerId.Clear();
         }
     }
 

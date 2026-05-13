@@ -15,6 +15,7 @@ public class AuthService : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
         await InitializeAsync();
     }

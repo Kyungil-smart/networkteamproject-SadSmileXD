@@ -26,7 +26,9 @@ public enum SubscribeType
     OnLoseCanvas,
     OFFWinCanvas,
     OFFLoseCanvas,
-
+    //
+    DeSpawnObjects,
+    DeSpawnObjectsComplete,
 }
 
 public class SubscribeManager : MonoBehaviour
@@ -56,6 +58,8 @@ public class SubscribeManager : MonoBehaviour
             subscriptions[type] = (Action)subscriptions[type] + action;
         else
             subscriptions[type] = action;
+
+        Debug.Log($"Subscribed to {type}{action}");
     }
 
     public void Unsubscribe(SubscribeType type, Action action)

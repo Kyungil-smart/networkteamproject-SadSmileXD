@@ -14,7 +14,10 @@ public class MapManager : NetworkBehaviour
     {
         if (Instance == null) Instance = this;
     }
-
+    public override void OnNetworkSpawn()
+    {
+        SubscribeManager.instance.Publish(SubscribeType.DeSpawnObjects, this.NetworkObject);
+    }
     // 발판이 맵에 생성될 때, 자기를 매니저에 등록하고 고유 번호(ID)를 발급받는 함수
     public int RegisterTile(HexTiles tile)
     {
