@@ -10,6 +10,7 @@ public class HexTiles : MonoBehaviour
     [SerializeField] private Renderer m_renderer;
     [SerializeField] private Collider m_collider;
 
+    public Renderer renderer;
     private void Start()
     {
         // 게임이 시작되면 MapManager에게 나를 등록하고 번호표를 받음
@@ -17,6 +18,7 @@ public class HexTiles : MonoBehaviour
         {
             myTileID = MapManager.Instance.RegisterTile(this);
         }
+        renderer=this.gameObject.GetComponent<Renderer>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,7 +30,7 @@ public class HexTiles : MonoBehaviour
         {
             isTriggered = true;
             // 밟힌 타일은 빨간색으로 표시
-            GetComponent<Renderer>().material.color = Color.gold;
+            ChangeColor();
             myAnimator.SetTrigger("OnPlatform");
             Invoke(nameof(SendHideRequest), 1f);
         }
@@ -48,5 +50,13 @@ public class HexTiles : MonoBehaviour
     {
         if (m_renderer != null) m_renderer.enabled = false;
         if (m_collider != null) m_collider.enabled = false;
+    }
+    private void ChangeColor()
+    {
+        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+
+        renderer.GetPropertyBlock(mpb);
+        mpb.SetColor("_BaseColor", Color.red);
+        renderer.SetPropertyBlock(mpb);
     }
 }
