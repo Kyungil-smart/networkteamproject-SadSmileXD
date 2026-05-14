@@ -24,10 +24,7 @@ public class PlayerController : NetworkBehaviour
 
     public NetworkVariable<ulong> customPlayerId = new NetworkVariable<ulong>(0);
     public GameObject parent;
-    private void Awake()
-    {
-        DontDestroyOnLoad(parent);
-    }
+   
     public override void OnNetworkSpawn()
     {
       
