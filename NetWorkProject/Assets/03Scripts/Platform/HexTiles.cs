@@ -5,7 +5,7 @@ public class HexTiles : MonoBehaviour
 {
     private int myTileID = -1;
     private bool isTriggered = false;
-
+    public Animator myAnimator;
     [Header("Components")]
     [SerializeField] private Renderer m_renderer;
     [SerializeField] private Collider m_collider;
@@ -27,8 +27,9 @@ public class HexTiles : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = true;
-
-             
+            // 밟힌 타일은 빨간색으로 표시
+            GetComponent<Renderer>().material.color = Color.gold;
+            myAnimator.SetTrigger("OnPlatform");
             Invoke(nameof(SendHideRequest), 1f);
         }
     }
