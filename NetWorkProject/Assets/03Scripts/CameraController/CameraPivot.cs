@@ -13,11 +13,15 @@ public class ThirdPersoncamera : MonoBehaviour
     float yaw;   // 좌우
     float pitch; // 상하
 
-    void Start()
+     
+    private void OnEnable()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    private void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     void LateUpdate()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;

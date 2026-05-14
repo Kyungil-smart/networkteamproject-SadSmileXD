@@ -46,7 +46,7 @@ public class HexMapGenerator : NetworkBehaviour
                 Vector3 pos = new Vector3(posX, this.transform.position.y, posZ);
                 mpb.Clear();
                 mpb.SetColor("_BaseColor", m_color.Value);
-                var prefab = Instantiate(hexPrefab, pos, Quaternion.Euler(-90, 0, 0));
+                var prefab = Instantiate(hexPrefab, pos, Quaternion.Euler(0, -90, 0));
               
                 var renderer =prefab.GetComponentInChildren<MeshRenderer>();
                 //renderer.material = myMaterial;
