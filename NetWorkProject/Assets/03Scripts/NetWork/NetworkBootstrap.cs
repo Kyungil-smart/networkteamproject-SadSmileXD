@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Netcode;
+using UnityEngine.SceneManagement;
 
 public class NetworkBootstrap : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class NetworkBootstrap : MonoBehaviour
     [SerializeField] private Button _copyButton;
 
     private bool _isCallbacksBound;
-
+    public Animator animator;
     private void OnEnable()
     {
         BindNetworkCallbacks();
@@ -75,13 +76,16 @@ public class NetworkBootstrap : MonoBehaviour
         try
         {
             string joinCode = await RelayNetworkService.Instance.StartHostWithRelayAsync();
-            //_joinCodeInputField.text = joinCode;
-            LobbyManager.Instance.InitializeHostLobby();
+            _joinCodeInputField.text = joinCode;
+            LobbyManager.Instance.JoinCode = joinCode;
+           
+
         }
         catch (Exception e)
         {
             Debug.LogError($"[Bootstrap] Host 시작 오류: {e.Message}");
         }
+        animator.SetBool("UIFlag", true);
     }
 
     // Relay 연동으로 변경: InputField 의 Join Code 를 읽어 Relay 에 접속
@@ -93,14 +97,21 @@ public class NetworkBootstrap : MonoBehaviour
         try
         {
             await RelayNetworkService.Instance.StartClientWithRelayAsync(joinCode);
+           
         }
         catch (Exception e)
         {
             Debug.LogError($"[Bootstrap] Client 접속 오류: {e.Message}");
         }
+        animator.SetBool("UIFlag", true);
     }
 
-    private void OnDisconnectClicked() => NetworkManager.Singleton.Shutdown();
+    private void OnDisconnectClicked()
+    {
+        NetworkManager.Singleton.Shutdown();
+        Debug.Log("[Bootstrap] 네트워크 종료");
+        SubscribeManager.instance.Publish(SubscribeType.dontDestroyBreak);
+    }
 
     // 추가: Join Code 를 클립보드에 복사
     private void OnCopyClicked()

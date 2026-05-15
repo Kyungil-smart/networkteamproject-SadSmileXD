@@ -50,3 +50,22 @@ The following packages were updated:
   com.unity.test-framework from version 1.4.2 to 1.6.0
   com.unity.timeline from version 1.8.6 to 1.8.10
   com.unity.visualscripting from version 1.9.1 to 1.9.9
+
+=== Mon May 11 12:42:00 2026
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.render-pipelines.core from version 14.0.7 to 17.3.0
+  com.unity.render-pipelines.universal from version 14.0.7 to 17.3.0
+  com.unity.shadergraph from version 14.0.7 to 17.3.0
+
+=== Mon May 11 12:42:00 2026
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.core@17.3.0
+  com.unity.shadergraph@17.3.0

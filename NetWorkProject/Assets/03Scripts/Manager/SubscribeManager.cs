@@ -13,6 +13,24 @@ public enum SubscribeType
     EmailVerificationRequired,//활성화 이메일 인증 하라는 창
     DeleteBtnActive, //계정 삭제
     //==================
+    SendMessage,
+    //=============
+    AddUserName,
+    //----------
+    PlayerSpawnCountUp, //플레이어 스폰
+    PlayerSpawnCountDown,
+    ///
+    PlayerWinLose, //플레이어 승패
+    //
+    OnWinCanvas,
+    OnLoseCanvas,
+    OFFWinCanvas,
+    OFFLoseCanvas,
+    //
+    DeSpawnObjects,
+    DeSpawnObjectsComplete,
+    //d
+    dontDestroyBreak,
 }
 
 public class SubscribeManager : MonoBehaviour
@@ -42,6 +60,8 @@ public class SubscribeManager : MonoBehaviour
             subscriptions[type] = (Action)subscriptions[type] + action;
         else
             subscriptions[type] = action;
+
+        Debug.Log($"Subscribed to {type}");
     }
 
     public void Unsubscribe(SubscribeType type, Action action)
