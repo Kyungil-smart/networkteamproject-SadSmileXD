@@ -154,12 +154,12 @@ public class PlayerController : NetworkBehaviour
     IEnumerator freeobject()
     {
         // 1. 우선 0.5초 대기 (에디터 도구가 정리될 시간 확보)
-        yield return new WaitForSecondsRealtime(0.5f);
+        
 
         // 2. 디스폰 완료 이벤트 발행
         if (SubscribeManager.instance != null)
             SubscribeManager.instance.Publish(SubscribeType.DeSpawnObjectsComplete);
-
+        yield return new WaitForSecondsRealtime(3f);
         // 3. 모든 플레이어 오브젝트 일괄 디스폰
         if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
         {
@@ -173,7 +173,8 @@ public class PlayerController : NetworkBehaviour
                 }
             }
         }
-
+        SubscribeManager.instance.Publish(SubscribeType.OFFLoseCanvas);
+        SubscribeManager.instance.Publish(SubscribeType.OFFWinCanvas);
         Debug.Log("모든 오브젝트 정리 완료");
     }
     IEnumerator LoadNextScene()

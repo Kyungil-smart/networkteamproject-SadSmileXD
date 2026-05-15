@@ -55,12 +55,12 @@ public class HexTiles : MonoBehaviour
     // 매니저의 명령을 받아 실제로 내 컴퓨터 화면에서 발판을 끄는 함수
     public void HideTileLocally()
     {
-         parent.SetActive(false); // 임의의 떨어진 위치로 이동
+         
         if (m_renderer != null) m_renderer.enabled = false;
         if (m_colliders != null) 
             foreach (var collider in m_colliders)
             {
-                collider.isTrigger = true;
+               
                 collider.enabled = false;
              
             }
