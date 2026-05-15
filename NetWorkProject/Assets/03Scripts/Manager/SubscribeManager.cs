@@ -29,6 +29,8 @@ public enum SubscribeType
     //
     DeSpawnObjects,
     DeSpawnObjectsComplete,
+    //d
+    dontDestroyBreak,
 }
 
 public class SubscribeManager : MonoBehaviour
@@ -59,7 +61,7 @@ public class SubscribeManager : MonoBehaviour
         else
             subscriptions[type] = action;
 
-        Debug.Log($"Subscribed to {type}{action}");
+        Debug.Log($"Subscribed to {type}");
     }
 
     public void Unsubscribe(SubscribeType type, Action action)

@@ -12,15 +12,15 @@ public class HexMapGenerator : NetworkBehaviour
     public float hexSize = 1f;
     private NetworkVariable< Color > m_color = new NetworkVariable<Color>();
     MaterialPropertyBlock mpb;
-   
+    public Color m_Color;
     public override void OnNetworkSpawn()
     {
         if(IsServer)
         {
-            m_color.Value = new Color(Random.value, Random.value, Random.value);
+            m_color.Value = m_Color;
         }
         
-        //mpb = new MaterialPropertyBlock();
+        mpb = new MaterialPropertyBlock();
         Generate();
     }
     void Generate()
@@ -28,9 +28,9 @@ public class HexMapGenerator : NetworkBehaviour
       
         float xOffset = hexSize * 1.5f;
         float zOffset = Mathf.Sqrt(3f) * hexSize;
-        Shader shader = Shader.Find("Universal Render Pipeline/Lit");
-        Material myMaterial = new Material(shader);
-        myMaterial.SetColor("_BaseColor", m_color.Value);
+       // Shader shader = Shader.Find("Universal Render Pipeline/Lit");
+       // Material myMaterial = new Material(shader);
+        //myMaterial.SetColor("_BaseColor", m_color.Value);
          
         for (int x = 0; x < width; x++)
         {
@@ -44,16 +44,17 @@ public class HexMapGenerator : NetworkBehaviour
                     posZ += zOffset / 2f;
 
                 Vector3 pos = new Vector3(posX, this.transform.position.y, posZ);
-                //mpb.Clear();
-                //mpb.SetColor("_BaseColor", m_color.Value);
-                var prefab = Instantiate(hexPrefab, pos, Quaternion.Euler(-90, 0, 0));
-               // prefab.GetComponent<NetworkObject>().Spawn();
+                mpb.Clear();
+                mpb.SetColor("_BaseColor", m_color.Value);
+                var prefab = Instantiate(hexPrefab, pos, Quaternion.Euler(0, -90, 0));
+              
                 var renderer =prefab.GetComponentInChildren<MeshRenderer>();
-                renderer.material = myMaterial;
-                //renderer.SetPropertyBlock(mpb);
+                //renderer.material = myMaterial;
+                renderer.SetPropertyBlock(mpb);
                  
             }
         }
        //this.NetworkObject.Despawn();
     }
+   
 }

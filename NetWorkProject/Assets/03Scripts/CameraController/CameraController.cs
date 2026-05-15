@@ -4,7 +4,7 @@ public class playerRotation : MonoBehaviour
 {
     [Header("회전 속도 설정")]
     [SerializeField] private float mouseSensitivity = 100f; // 마우스 민감도
-
+    public Camera camera;
     private float _yRotation = 0f;
 
    
